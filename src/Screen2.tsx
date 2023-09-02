@@ -1,7 +1,8 @@
 import {ReactElement} from 'react'
-import {Button, StyleSheet} from 'react-native'
+import {StyleSheet} from 'react-native'
 import {SafeAreaView} from 'react-native-safe-area-context'
 import {RootStackScreenProps} from './NavigationParamList'
+import {Button} from 'react-native-paper'
 
 export const Screen2 = ({
   navigation,
@@ -9,9 +10,11 @@ export const Screen2 = ({
   return (
     <SafeAreaView style={styles.container}>
       <Button
-        title={'Go to screen 1'}
-        onPress={() => navigation.navigate('Screen1')}
-      />
+        style={styles.button}
+        mode="contained"
+        onPress={() => navigation.navigate('Screen1')}>
+        Go to screen 1
+      </Button>
     </SafeAreaView>
   )
 }
@@ -19,5 +22,9 @@ export const Screen2 = ({
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    margin: 16,
+  },
+  button: {
+    alignSelf: 'center',
   },
 })
